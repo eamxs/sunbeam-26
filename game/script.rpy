@@ -334,6 +334,7 @@ label senario8:
         jump ending2
 
 #endings
+#endings
 
 label ending1:
     scene sleeping_with_sun_up
