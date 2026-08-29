@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 379: end of line expected.
+    scene carhitcat4 with slow dissolve
+                               ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Sat Aug 29 17:52:01 2026
