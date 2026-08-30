@@ -339,8 +339,6 @@ label ending1:
     scene sleeping_with_sun_up
     "zzzzzzzzz..."
     menu:
-        "Load Last Autosave":
-            $ renpy.load("autosave1")
         "Return to Main Menu":
             return
 
@@ -360,7 +358,7 @@ label ending2:
     hide catyawn
     scene catinbed with slow_dissolve
     pause 1.0
-    with fade
+    scene black with fade
     #fade to black
     jump credits
 
@@ -369,7 +367,7 @@ label ending3:
     stop music fadeout 2.0
     play music "u_5v7tonufva-melts-all-your-memories-249351.mp3" fadein 1.5
 
-    scene sunsetwithcat with slow_dissolve
+    scene sunsetwithcat2 with slow_dissolve
     pause 1.5
     scene carhitcat1 with slow_dissolve
     pause 1.5
@@ -380,7 +378,7 @@ label ending3:
     with fade
     scene carhitcat4 with slow_dissolve
     pause 1.7
-    with fade
+    scene black with fade
     jump credits
 
 #credits
@@ -388,6 +386,6 @@ label credits:
     stop music fadeout 2.0
     play music "u_5v7tonufva-melts-all-your-memories-249351.mp3" fadein 1.5
 
-    scene black
+    scene black with fade
     centered "Thank you for playing!\nCreated by: Chuqi and Margarita\n:P"
     return
