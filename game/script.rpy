@@ -4,6 +4,10 @@
 define d = Character("dog", color="#0E7509", 
     ctc="ctc_blink",
     ctc_position="nestled")
+    
+define a = Character(" ",     
+    ctc="ctc_blink",
+    ctc_position="nestled")
 
 #lil arrow thing
 image ctc_blink:
@@ -37,7 +41,7 @@ menu:
     "Wake up":
         show butterfly at center with slow_dissolve
         $ preferences.text_cps = 20
-        "This action will have consequences."
+        a "This action will have consequences."
         scene waking_up with slow_dissolve
         scene waking_up2 with slow_dissolve
         pause 2.0
@@ -46,14 +50,14 @@ menu:
         jump senario1
     "Stay asleep":
         scene catinbed
-        "zzzzzzzz..."
-        "zzzzzzzzz..."
+        a "zzzzzzzz..."
+        a "zzzzzzzzz..."
         menu:
             "wake up":
                 scene black with dissolve
                 show butterfly at center with slow_dissolve
                 $ preferences.text_cps = 20
-                "This action will have consequences."
+                a "This action will have consequences."
                 scene waking_up with slow_dissolve
                 scene waking_up2 with slow_dissolve
                 pause 2.0
@@ -165,13 +169,13 @@ label senario4:
     play sound "door.mp3"
 
     scene outsidehousewithcat with slow_dissolve
-    pause 1.5
+    pause 2.3
     scene parkwithcat with slow_dissolve
     pause 1.5 
     show surprisedcat at right, sprite_jump
     c "What's that?"
     scene butterflyontheground with slow_dissolve
-    pause 1.0
+    pause 2.3
     scene park with slow_dissolve
     pause 1.0
 
@@ -247,10 +251,10 @@ menu:
         if butterfly == 1:
             show butterflyfade
             with dissolve
-            jump senario8
+            jump senario6
         else:
             with dissolve
-            jump senario8
+            jump senario6
     "Don't go on a walk with Dog":
         show defaultcat at right with slow_dissolve
         c "Nah, maybe next time :3"
@@ -259,92 +263,127 @@ menu:
         scene parkwithcat with slow_dissolve
         if butterfly == 1:
             show butterflyfade
-            jump senario8
+            jump senario6
         else:
-            jump senario8
+            jump senario6
 
-# #senario6
-# label senario6:
-# scene catonsidewalk
-# scene sidewalk
-# show defaultcat at right #add fade in
-# c "wow I should really eat lunch..."
-# hide defaultcat
-# scene leftandrightresturant
-# show thinkingcat at right #add fade in
-# c "which one should I go to?"
-# hide thinkingcat
-# menu:
-#     "Left restaurant":
-#         scene catinleftresturant
-#         show happycat at right #add fade in
-#         c "Yum! pizza!!"
-#         jump senario7
-#     "Right restaurant":
-#         scene catinrightresturant
-#         show happycat at right #add fade in
-#         c "Yum! sushi!!"
-#         jump senario7
+#senario6
+label senario6:
+scene catonsidewalk with slow_dissolve
+pause 1.0
+scene sidewalk with slow_dissolve
+pause 0.7
+show defaultcat at right with dissolve
+c "wow I should really eat lunch..."
+hide defaultcat with dissolve
+scene leftandrightresturant with slow_dissolve
+pause 0.5
+show thinkingcat at right with slow_dissolve
+c "which one should I go to?"
+hide thinkingcat with dissolve
+pause 0.3
+menu: 
+    "Left restaurant":
+        scene catinleftresturant with slow_dissolve
+        pause 1.5
+        show happycat at right with dissolve
+        c "Yum! pizza!!"
+        with dissolve
+        jump senario7
+    "Right restaurant":
+        scene catinrightresturant with slow_dissolve
+        pause 1.5
+        show happycat at right with dissolve
+        c "Yum! sushi!!"
+        with dissolve
+        jump senario7
 
-# #senario7
-# label senario7: 
-# scene leftandrightresturant
-# show defaultcat at right #add fade in
-# c "where should I go now?"
-# menu:
-#     "Go to the waterside":
-#         scene watersidewithcat
-#         scene waterside
-#         show defaultcat at right #add fade in
-#         $ preferences.text_cps = 5
-#         c "so relaxing..."
-#         scene watersidewithcat
-#         $ preferences.text_cps = 60
-#         c "so pretty too..."
-#         menu: 
-#             "stay a bit longer":
-#                 c "I could stay here forever..."
-#                 scene watersidewithcat
-#                 menu: 
-#                     "head back":
-#                             if butterfly == 1:
-#                                 show butterflyfade
-#                                 jump senario8
-#                             else:
-#                                 jump senario8
-#             "Go back":
-#                 c "Maybe I should head back"
-#                 if butterfly == 1:
-#                     show butterflyfade
-#                     jump senario8
-#                 else:
-#                     jump senario8
+#senario7
+label senario7: 
+scene leftandrightresturant with slow_dissolve
+pause 1.5
+show defaultcat at right with dissolve
+c "where should I go now?"
+menu:
+    "Go to the waterside":
+        hide defaultcat with dissolve
+        scene watersidewithcat with slow_dissolve
+        pause 1.7
+        scene waterside with dissolve
+        pause 0.3
+        show defaultcat at right with dissolve
+        pause 0.3
+        $ preferences.text_cps = 5
+        c "so relaxing..."
+        hide defaultcat with dissolve
+        scene watersidewithcat with slow_dissolve
+        $ preferences.text_cps = 60
+        c "so pretty too..."
+        menu: 
+            "stay a bit longer":
+                show happycat with dissolve
+                c "I could stay here forever..."
+                hide happycat with dissolve
+                scene watersidewithcat with slow_dissolve
+                pause 2.0
+                menu: 
+                    "head back":
+                            if butterfly == 1:
+                                show butterflyfade with dissolve
+                                with dissolve
+                                jump senario8
+                            else:
+                                with dissolve
+                                jump senario8
+            "Go back":
+                scene waterside with slow_dissolve
+                show defaultcat with dissolve
+                c "Maybe I should head back"
+                hide defaultcat with dissolve
+                if butterfly == 1:
+                    show butterflyfade with dissolve
+                    with slow_dissolve
+                    jump senario8
+                else:
+                    with slow_dissolve
+                    jump senario8
 
-#     "Go to the forest":
-#         scene forestwithcat
-#         scene forest
-#         scene birdontree1
-#         scene birdonetree2
-#         show happycat at right #add fade in
-#         c "I love the forest!"
-#         menu: 
-#             "stay a bit longer":
-#                 c "I could stay here forever..."
-#                 scene forestwithcat
-#                 menu: 
-#                     "head back":
-#                             if butterfly == 1:
-#                                 show butterflyfade
-#                                 jump senario8
-#                             else:
-#                                 jump senario8
-#             "Go back":
-#                 c "Maybe I should head back"
-#                 if butterfly == 1:
-#                     show butterflyfade
-#                     jump senario8
-#                 else:
-#                     jump senario8
+    "Go to the forest":
+        scene forestwithcat with slow_dissolve
+        pause 1.5
+        scene forest with slow_dissolve
+        pause 1.5
+        scene birdontree1 with slow_dissolve
+        pause 1.5
+        scene birdonetree2 with slow_dissolve
+        pause 1.5
+        scene forest with slow_dissolve
+        show happycat at right with dissolve
+        c "I love the forest!"
+        pause 0.5
+        menu: 
+            "stay a bit longer":
+                c "I could stay here forever..."
+                hide happycat with dissolve
+                scene forestwithcat with slow_dissolve
+                menu: 
+                    "head back":
+                            if butterfly == 1:
+                                show butterflyfade with dissolve
+                                with dissolve
+                                jump senario8
+                            else:
+                                with dissolve
+                                jump senario8
+            "Go back":
+                c "Maybe I should head back"
+                if butterfly == 1:
+                    show butterflyfade with dissolve
+                    with dissolve
+                    jump senario8
+                else:
+                    with dissolve
+                    jump senario8
 
 
 #senario8
@@ -354,17 +393,21 @@ label senario8:
     scene sunsetwithcat2 with slow_dissolve
     c "what a pretty sunset"
     if butterfly == 1:
+        with dissolve
         jump ending3 #don't forget to fade it
     else:
+        with dissolve
         jump ending2
 
 #endings
 
 label ending1:
-    scene sleeping_with_sun_up
+    scene sleeping_with_sun_up with dissolve
     "zzzzzzzzz..."
+    pause 1.0
     menu:
         "Return to Main Menu":
+            with dissolve
             return
 
 #normal ending ig
@@ -372,15 +415,19 @@ label ending2:
     stop music fadeout 2.0
     play music "u_5v7tonufva-melts-all-your-memories-249351.mp3" fadein 1.5
 
-    scene sunsetwithcat2
-    scene outsidehousewithcatsunset
-    scene catinhouse2
-    show defaultcat at right #add fade in
+    scene sunsetwithcat2 with slow_dissolve
+    pause 1.5
+    scene outsidehousewithcatsunset with slow_dissolve
+    pause 1.5
+    scene catinhouse2 with slow_dissolve
+    pause 1.5
+    show defaultcat at right with dissolve
     c "What a good, perfect day..."
-    hide defaultcat
-    show catyawn at right #add fade in
+    hide defaultcat with dissolve
+    show catyawn at right with dissolve
     c "*yawn*"
-    hide catyawn
+    hide catyawn with dissolve
+    pause 0.5
     scene catinbed with slow_dissolve
     pause 1.0
     scene black with dissolve
@@ -393,13 +440,13 @@ label ending3:
     play music "ending3.mp3" fadein 1.5
 
     scene sunsetwithcat2 with slow_dissolve
-    pause 1.5
+    pause 1.2
     scene carhitcat1 with slow_dissolve
-    pause 1.5
+    pause 1.2
     scene carhitcat2 with slow_dissolve
-    pause 1.5
+    pause 1.2
     scene carhitcat3 with slow_dissolve
-    pause 1.0
+    pause 1.2
     with dissolve
     scene carhitcat4 with dissolve
     pause 1.7
