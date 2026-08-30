@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 379: end of line expected.
-    scene carhitcat4 with slow dissolve
-                               ^
+File "game/script.rpy", line 40: choice menuitem expects a non-empty block.
+    "wake up":
+              ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Aug 29 17:52:01 2026
+Sat Aug 29 21:55:18 2026

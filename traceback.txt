@@ -1,30 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 343, in script
-    $ renpy.load("autosave1")
-  File "game/script.rpy", line 343, in <module>
-    $ renpy.load("autosave1")
-AttributeError: 'NoneType' object has no attribute 'load'
+  File "game/script.rpy", line 66, in script
+    c "guhhh"
+TypeError: got an unexpected keyword argument 'two_window'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 343, in script
-    $ renpy.load("autosave1")
-  File "/Users/Eamsus/Documents/renpy/renpy/ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/Eamsus/Documents/renpy/renpy/python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 343, in <module>
-    $ renpy.load("autosave1")
-  File "/Users/Eamsus/Documents/renpy/renpy/loadsave.py", line 832, in load
-    log_data, signature = location.load(filename)
-  File "/Users/Eamsus/Documents/renpy/renpy/savelocation.py", line 585, in load
-    return l.load(slotname) # type: ignore
-AttributeError: 'NoneType' object has no attribute 'load'
+  File "game/script.rpy", line 66, in script
+    c "guhhh"
+  File "/Users/Eamsus/Documents/renpy/renpy/ast.py", line 2586, in execute
+    Say.execute(self)
+  File "/Users/Eamsus/Documents/renpy/renpy/ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/Eamsus/Documents/renpy/renpy/exports/sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "/Users/Eamsus/Documents/renpy/renpy/character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/Eamsus/Documents/renpy/renpy/character.py", line 1117, in do_display
+    display_say(who,
+  File "/Users/Eamsus/Documents/renpy/renpy/character.py", line 749, in display_say
+    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
+  File "/Users/Eamsus/Documents/renpy/renpy/display/screen.py", line 1541, in get_displayable
+    screen.update()
+  File "/Users/Eamsus/Documents/renpy/renpy/display/screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "/Users/Eamsus/Documents/renpy/renpy/parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "/Users/Eamsus/Documents/renpy/renpy/parameter.py", line 384, in apply
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'two_window'
 
 macOS-26.5.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
-sunbeam 26 1.0
-Sat Aug 29 18:57:17 2026
+The Perfect Day: Pink Cat 1.0
+Sat Aug 29 22:20:19 2026

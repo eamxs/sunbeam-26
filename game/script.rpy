@@ -1,5 +1,14 @@
-﻿define c = Character("cat", color="#873D00")
+﻿define c = Character("cat", color="#873D00", 
+    ctc="ctc_blink",
+    ctc_position="nestled")
 define d = Character("dog", color="#0E7509")
+
+#lil arrow thing
+image ctc_blink:
+    "arrow.png"
+    linear 0.50 alpha 1.0
+    linear 0.50 alpha 0.0
+    repeat 
 
 #dimentions: 1280x720. 
 
@@ -7,7 +16,7 @@ define d = Character("dog", color="#0E7509")
 default butterfly = 0
 
 #fade timing
-define slow_dissolve = Dissolve(1.7)
+define slow_dissolve = Dissolve(1.4)
 
 #jumping
 transform sprite_jump:
@@ -34,7 +43,21 @@ menu:
         pause 2.0
         jump senario1
     "Stay asleep":
-        jump ending1
+        scene catinbed
+        "zzzzzzzz..."
+        "zzzzzzzzz..."
+        menu:
+            "wake up":
+                scene black with dissolve
+                show butterfly at center with slow_dissolve
+                $ preferences.text_cps = 20
+                "This action will have consequences."
+                scene waking_up with slow_dissolve
+                scene waking_up2 with slow_dissolve
+                pause 2.0
+                scene waking_up3 with slow_dissolve
+                pause 2.0
+                jump senario1
 
 #senario1
 label senario1:
@@ -50,14 +73,14 @@ menu:
         scene washingfacecat with slow_dissolve
         play sound "water.mp3"
         pause 2.0
-        with fade
+        with dissolve
         jump senario2
     "Don't brush teeth":
         c "I don't feel like it :P"
         scene washingfacecat with slow_dissolve
         play sound "water.mp3"
         pause 2.0
-        with fade
+        with dissolve
         jump senario2 
 
 #senario2
@@ -87,13 +110,13 @@ menu:
                     play sound "eating.mp3"
                     c "yum!"
                     pause 1.0
-                    with fade
+                    with dissolve
             jump senario3
 
         "Skip breakfast":
             show defaultcat at right with slow_dissolve
             c "yah I'm not that hungry :P"
-            with fade
+            with dissolve
             jump senario3
 
 #senario3
@@ -120,7 +143,7 @@ label senario3:
             show happycat at right with slow_dissolve
             c "I love these shoes!"
             c "time to go outside!"
-            with fade
+            with dissolve
             jump senario4
         "Green shoes":
             scene catwithgreenshoes with slow_dissolve
@@ -128,7 +151,7 @@ label senario3:
             show happycat at right with slow_dissolve
             c "I love these shoes!"
             c "time to go outside!"
-            with fade
+            with dissolve
             jump senario4
 
 stop music fadeout 0.5
@@ -165,7 +188,7 @@ label senario4:
             scene butterflyfliesaway with slow_dissolve
             pause 0.7
             $ butterfly = 1
-            with fade
+            with dissolve
             jump senario5
         "Leave the buterfly alone":
             show moreworriedcat at right with slow_dissolve
@@ -181,12 +204,12 @@ label senario4:
                     scene butterflyfliesaway with slow_dissolve
                     pause 0.7
                     $ butterfly = 1
-                    with fade
+                    with dissolve
                     jump senario5
                 "Leave the butterfly alone":
                     show worriedcat at right with slow_dissolve
                     c "I should just leave..."
-                    with fade
+                    with dissolve
                     jump senario5
 
 #senario5
@@ -221,10 +244,10 @@ menu:
         pause 1.0
         if butterfly == 1:
             show butterflyfade
-            with fade
+            with dissolve
             jump senario8
         else:
-            with fade
+            with dissolve
             jump senario8
     "Don't go on a walk with Dog":
         show defaultcat at right with slow_dissolve
@@ -358,14 +381,14 @@ label ending2:
     hide catyawn
     scene catinbed with slow_dissolve
     pause 1.0
-    scene black with fade
+    scene black with dissolve
     #fade to black
     jump credits
 
 #this is the one where he gets hit by a CAR!!!
 label ending3:
     stop music fadeout 2.0
-    play music "u_5v7tonufva-melts-all-your-memories-249351.mp3" fadein 1.5
+    play music "ending3.mp3" fadein 1.5
 
     scene sunsetwithcat2 with slow_dissolve
     pause 1.5
@@ -375,18 +398,18 @@ label ending3:
     pause 1.5
     scene carhitcat3 with slow_dissolve
     pause 1.0
-    with fade
+    with dissolve
     scene carhitcat4 with dissolve
     pause 1.7
     
-    scene black with fade
+    scene black with dissolve
     jump credits
 
 #credits
 label credits:
     stop music fadeout 2.0
-    play music "u_5v7tonufva-melts-all-your-memories-249351.mp3" fadein 1.5
+    play music "ending.mp3" fadein 1.5
 
-    scene black with fade
+    scene black with dissolve
     centered "Thank you for playing!\nCreated by: Chuqi and Margarita\n:P"
     return

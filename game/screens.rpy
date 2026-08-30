@@ -4,6 +4,8 @@
 
 init offset = -1
 
+style navigation_button:
+    activate_sound "click.mp3"
 
 ################################################################################
 ## Styles
@@ -334,6 +336,7 @@ style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
 style navigation_button:
+    activate_sound "click.mp3"
     size_group "navigation"
     properties gui.button_properties("navigation_button")
 
