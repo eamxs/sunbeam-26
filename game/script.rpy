@@ -376,8 +376,9 @@ label ending3:
     scene carhitcat3 with slow_dissolve
     pause 1.0
     with fade
-    scene carhitcat4 with slow_dissolve
+    scene carhitcat4 with dissolve
     pause 1.7
+    
     scene black with fade
     jump credits
 
