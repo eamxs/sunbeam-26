@@ -1,7 +1,9 @@
 ﻿define c = Character("cat", color="#873D00", 
     ctc="ctc_blink",
     ctc_position="nestled")
-define d = Character("dog", color="#0E7509")
+define d = Character("dog", color="#0E7509", 
+    ctc="ctc_blink",
+    ctc_position="nestled")
 
 #lil arrow thing
 image ctc_blink:
