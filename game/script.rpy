@@ -21,6 +21,9 @@ image ctc_blink:
 #butterfly ending talley thing
 default butterfly = 0
 
+#red shoes green shoes thing
+default red = 0
+
 #fade timing
 define slow_dissolve = Dissolve(1.4)
 
@@ -168,9 +171,15 @@ label senario4:
     play music "slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" fadein 1.5 
     play sound "door.mp3"
 
-    scene outsidehousewithcat with slow_dissolve
-    pause 2.3
-    scene parkwithcat with slow_dissolve
+    if red == 1:
+        scene outsidehousewithcat with slow_dissolve #red shoes
+        pause 2.3
+        scene parkwithcat with slow_dissolve
+    else:
+        scene outsidehousewithcat with slow_dissolve #green shoes
+        pause 2.3
+        scene parkwithcat with slow_dissolve
+    
     pause 1.5 
     show surprisedcat at right, sprite_jump
     c "What's that?"
@@ -220,10 +229,14 @@ label senario4:
 
 #senario5
 label senario5:
-scene parkwithcat with slow_dissolve
-pause 1.0
-scene park with slow_dissolve
-pause 1.0
+    if red == 1:
+        scene parkwithcat with slow_dissolve #red
+        pause 1.0
+
+    else:
+        scene parkwithcat with slow_dissolve #green
+        pause 1.0
+
 show defaultcat at right with slow_dissolve
 c "Hey!"
 c "Who's that?"
