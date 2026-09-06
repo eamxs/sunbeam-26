@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 40: choice menuitem expects a non-empty block.
-    "wake up":
-              ^
+File "game/script.rpy", line 201: if statement expects a non-empty block.
+    if red == 1:
+                ^
+
+File "game/script.rpy", line 203: expected statement.
+    else:
+        ^
+
+File "game/script.rpy", line 365: if statement expects a non-empty block.
+    if red == 1:
+                ^
+
+File "game/script.rpy", line 367: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Aug 29 21:55:18 2026
+Sat Sep  5 21:10:18 2026

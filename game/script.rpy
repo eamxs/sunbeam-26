@@ -198,7 +198,10 @@ label senario4:
         "Help the buterfly":
             show bravecat at right with slow_dissolve
             c "I gochu lil bro"
-            scene catwithbutterfly with slow_dissolve
+            if red == 1:
+                scene catwithbutterfly with slow_dissolve
+            else:
+                scene catwithbutterflyg with slow_dissolve
             pause 1.0
             scene butterflyfliesaway with slow_dissolve
             pause 0.7
@@ -360,7 +363,7 @@ menu:
                 c "I could stay here forever..."
                 hide happycat with dissolve
                 if red == 1:
-                scene watersidewithcat with slow_dissolve
+                    scene watersidewithcat with slow_dissolve
                 else:
                     scene watersidewithcatg with slow_dissolve
                 pause 2.0
@@ -432,7 +435,10 @@ menu:
 
 #senario8
 label senario8:
-    scene sunsetwithcat with slow_dissolve
+    if red == 1:
+        scene sunsetwithcat with slow_dissolve
+    else:
+        scene sunsetwithcatg with slow_dissolve
     pause 1.5
     scene sunsetwithcat2 with slow_dissolve
     c "what a pretty sunset"
@@ -472,7 +478,7 @@ label ending2:
     c "*yawn*"
     hide catyawn with dissolve
     pause 0.5
-    scene catinbed with slow_dissolve
+    scene catinbednight with slow_dissolve
     pause 1.0
     scene black with dissolve
     #fade to black
