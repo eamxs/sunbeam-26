@@ -176,9 +176,9 @@ label senario4:
         pause 2.3
         scene parkwithcat with slow_dissolve
     else:
-        scene outsidehousewithcat with slow_dissolve #green shoes
+        scene outsidehousewithcatg with slow_dissolve #green shoes
         pause 2.3
-        scene parkwithcat with slow_dissolve
+        scene parkwithcatg with slow_dissolve
     
     pause 1.5 
     show surprisedcat at right, sprite_jump
@@ -234,7 +234,7 @@ label senario5:
         pause 1.0
 
     else:
-        scene parkwithcat with slow_dissolve #green
+        scene parkwithcatg with slow_dissolve #green
         pause 1.0
 
 show defaultcat at right with slow_dissolve
@@ -256,10 +256,20 @@ menu:
         hide dogdefault
         show happydog at left with dissolve
         d "yay!"
-        scene parkwalkingwithcatanddog with slow_dissolve
+        if red == 1:
+            scene parkwalkingwithcatanddog with slow_dissolve #red
+        else:
+            scene parkwalkingwithcatanddogg with slow_dissolve #green
         play sound "grass.mp3"
         pause 2.0
-        scene catsaygoodbyetodog with slow_dissolve
+        if red == 1:
+            scene parkwalkingwithcatanddog2 with slow_dissolve #red
+            scene catsaygoodbyetodog with slow_dissolve
+
+        else:
+            scene parkwalkingwithcatanddogg2 with slow_dissolve #green
+            scene catsaygoodbyetodogg with slow_dissolve
+
         pause 1.0
         if butterfly == 1:
             show butterflyfade
@@ -273,7 +283,10 @@ menu:
         c "Nah, maybe next time :3"
         show happydog at left with slow_dissolve
         d "alg!"
-        scene parkwithcat with slow_dissolve
+        if red == 1:
+            scene parkwithcat with slow_dissolve #red
+        else:
+            scene parkwithcatg with slow_dissolve #green
         if butterfly == 1:
             show butterflyfade
             jump senario6
@@ -282,7 +295,10 @@ menu:
 
 #senario6
 label senario6:
-scene catonsidewalk with slow_dissolve
+if red == 1:
+    scene catonsidewalk with slow_dissolve
+else:  
+    scene catonsidewalkg with slow_dissolve
 pause 1.0
 scene sidewalk with slow_dissolve
 pause 0.7
@@ -320,7 +336,10 @@ c "where should I go now?"
 menu:
     "Go to the waterside":
         hide defaultcat with dissolve
-        scene watersidewithcat with slow_dissolve
+        if red == 1:
+            scene watersidewithcat with slow_dissolve #red
+        else:
+            scene watersidewithcatg with slow_dissolve #green
         pause 1.7
         scene waterside with dissolve
         pause 0.3
@@ -329,7 +348,10 @@ menu:
         $ preferences.text_cps = 5
         c "so relaxing..."
         hide defaultcat with dissolve
-        scene watersidewithcat with slow_dissolve
+        if red == 1:
+            scene watersidewithcat with slow_dissolve #red
+        else:
+            scene watersidewithcatg with slow_dissolve #green
         $ preferences.text_cps = 60
         c "so pretty too..."
         menu: 
@@ -337,7 +359,10 @@ menu:
                 show happycat with dissolve
                 c "I could stay here forever..."
                 hide happycat with dissolve
+                if red == 1:
                 scene watersidewithcat with slow_dissolve
+                else:
+                    scene watersidewithcatg with slow_dissolve
                 pause 2.0
                 menu: 
                     "head back":
@@ -362,7 +387,10 @@ menu:
                     jump senario8
 
     "Go to the forest":
-        scene forestwithcat with slow_dissolve
+        if red == 1:
+            scene forestwithcat with slow_dissolve #red
+        else:
+            scene forestwithcatg with slow_dissolve #green
         pause 1.5
         scene forest with slow_dissolve
         pause 1.5
@@ -378,7 +406,10 @@ menu:
             "stay a bit longer":
                 c "I could stay here forever..."
                 hide happycat with dissolve
-                scene forestwithcat with slow_dissolve
+                if red == 1:
+                    scene forestwithcat with slow_dissolve #red
+                else:
+                    scene forestwithcatg with slow_dissolve #green
                 menu: 
                     "head back":
                             if butterfly == 1:
