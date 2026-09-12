@@ -1,18 +1,19 @@
-2026-09-06 01:13:06 UTC
+2026-09-11 20:24:10 UTC
 macOS-26.6.2-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
-Early init took 0.03s
-Loading error handling took 0.02s
-Loading script took 0.07s
-Loading save slot metadata took 0.02s
+Early init took 0.05s
+Loading error handling took 0.03s
+Loading script took 0.17s
+Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.03s
+Running init code took 0.04s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
+Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Dump and make backups took 0.03s
+Backing up script files to '/Users/Eamsus/Library/RenPy/backups/sunbeam 26':
+Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.03s
@@ -21,14 +22,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.98s
+Interface start took 1.08s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -38,7 +39,7 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M1'
 Version: b'2.1 Metal - 90.5'
 Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1440, 751) drawable=(2880, 1502)
+Screen sizes: virtual=(1280, 720) physical=(1440, 749) drawable=(2880, 1498)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1440, 751) drawable=(2880, 1502)
+Screen sizes: virtual=(1280, 720) physical=(1440, 749) drawable=(2880, 1498)
 Maximum texture size: 4096x4096

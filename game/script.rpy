@@ -395,11 +395,12 @@ menu:
         else:
             scene forestwithcatg with slow_dissolve #green
         pause 1.5
-        scene forest with slow_dissolve
-        pause 1.5
         scene birdontree1 with slow_dissolve
         pause 1.5
-        scene birdonetree2 with slow_dissolve
+        if red == 1:
+            scene birdontree2 with slow_dissolve
+        else:
+            scene birdontree2g with slow_dissolve
         pause 1.5
         scene forest with slow_dissolve
         show happycat at right with dissolve
