@@ -341,8 +341,14 @@ menu:
         hide defaultcat with dissolve
         if red == 1:
             scene watersidewithcat with slow_dissolve #red
+            pause 1.5
+            scene catinwater with slow_dissolve
+            pause 1.5
         else:
             scene watersidewithcatg with slow_dissolve #green
+            pause 1.5
+            scene catinwaterg with slow_dissolve
+            pause 1.5
         pause 1.7
         scene waterside with dissolve
         pause 0.3
