@@ -266,13 +266,13 @@ menu:
             scene parkwalkingwithcatanddogg with slow_dissolve #green
         play sound "grass.mp3"
         pause 2.0
-        if red == 1:
-            scene parkwalkingwithcatanddog2 with slow_dissolve #red
-            scene catsaygoodbyetodog with slow_dissolve
+        #if red == 1:
+            #scene parkwalkingwithcatanddog2 with slow_dissolve #red
+            #scene catsaygoodbyetodog with slow_dissolve
 
-        else:
-            scene parkwalkingwithcatanddogg2 with slow_dissolve #green
-            scene catsaygoodbyetodogg with slow_dissolve
+        #else:
+            #scene parkwalkingwithcatanddogg2 with slow_dissolve #green
+            #scene catsaygoodbyetodogg with slow_dissolve
 
         pause 1.0
         if butterfly == 1:
