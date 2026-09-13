@@ -147,6 +147,7 @@ label senario3:
     pause 1.0
     menu:
         "Red shoes": 
+            $ red = 1 
             scene catwithredshoes with slow_dissolve
             pause 1.0
             show happycat at right with slow_dissolve
